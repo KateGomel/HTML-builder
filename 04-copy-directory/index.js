@@ -19,7 +19,7 @@ async function copyDir(folder, copyFolder) {
       const place = path.join(folder, item.name);
       const newPlace = path.join(copyFolder, item.name);
       if (item.isDirectory()) {
-        await copyFolder(place, newPlace);
+        await copyDir(place, newPlace);
       } else {
         await fs.copyFile(place, newPlace);
       }
