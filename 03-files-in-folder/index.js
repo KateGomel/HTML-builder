@@ -16,7 +16,10 @@ async function listFiles(folder) {
         const size = stats.size / 1024;
         const ext = path.extname(file.name);
         console.log(
-          `${file.name.replace(ext, '')} - ${ext} - ${size.toFixed(3)} kb`,
+          `${file.name.replace(ext, '')} - ${ext.replace(
+            '.',
+            '',
+          )} - ${size.toFixed(3)} kb`,
         );
       }
     }
